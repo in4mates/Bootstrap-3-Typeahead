@@ -153,7 +153,7 @@
       if (!items.length) {
         return this.shown ? this.hide() : this;
       }
-      
+
       if (items.length > 0) {
         this.$element.data("active", items[0]);
       } else {
@@ -227,7 +227,7 @@
         return i[0];
       });
 
-      if (this.autoSelect && !activeFound) {        
+      if (this.autoSelect && !activeFound) {
         items.first().addClass('active');
         this.$element.data("active", items.first().data('value'));
       }
@@ -380,8 +380,10 @@
     }
 
   , blur: function (e) {
-      this.focused = false;
-      if (!this.mousedover && this.shown) this.hide();
+      if (!this.mousedover && this.shown){
+        this.hide();
+        this.focused = false;
+      }
     }
 
   , click: function (e) {
