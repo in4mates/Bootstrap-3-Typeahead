@@ -153,7 +153,7 @@
       if (!items.length) {
         return this.shown ? this.hide() : this;
       }
-      
+
       if (items.length > 0) {
         this.$element.data("active", items[0]);
       } else {
@@ -227,7 +227,7 @@
         return i[0];
       });
 
-      if (this.autoSelect && !activeFound) {        
+      if (this.autoSelect && !activeFound) {
         items.first().addClass('active');
         this.$element.data("active", items.first().data('value'));
       }
@@ -374,7 +374,7 @@
       if (!this.focused) {
         this.focused = true;
         if (this.options.showHintOnFocus) {
-          this.lookup("");
+          this.lookup();
         }
       }
     }
@@ -388,7 +388,6 @@
       e.stopPropagation();
       e.preventDefault();
       this.select();
-      this.$element.focus();
     }
 
   , mouseenter: function (e) {
